@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget and Finance</title>
+    <link rel="stylesheet" href="aboutbudget.css">
+</head>
+<body> 
+    <header>
+        <div class="navbar">
+            <div class="navlogo">
+                <img src="SAI_footer_logo.svg" alt="SAI Logo" class="logo">
+                <img src="azadi-mahotsav.jpg" alt="Azadi Logo" class="logo">
+            </div>
+            <nav class="nav-links">
+              
+                  <a href="#" class="nav-item">ABOUT</a>
+                  
+              <a href="#" class="nav-item">STADIA</a>
+              <a href="#" class="nav-item">PUBLICATIONS</a>
+              <a href="#" class="nav-item">LATEST UPDATES</a>
+              <a href="#" class="nav-item">CONTACT</a>
+          </nav>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="content">
+            <div class="vision-box">Sports Authority of India</div>
+            <div class="heading">BUDGET AND FINANCE</div>
+        </div>
+    </div>  
+
+    <!-- Tabs Section -->
+    <div class="tabs">
+        <button class="tab-btn" onclick="showContent('brief')">Brief</button>
+        <button class="tab-btn active" onclick="showContent('allocation')">Allocation</button>
+        <button class="tab-btn" onclick="showContent('downloads')">Downloads</button>
+    </div>
+
+    <!-- Content Section -->
+    <div class="tab-content" id="brief">
+        <p>Sports Authority of India is a Registered Society fully funded by Government of India and is under the Administrative control of Ministry of Youth Affairs & Sports. SAI is legislated by set of rules enshrined in the Memorandum of Association & Rules as well as the Financial ByeLaws. Government of India provides funds to SAI for implementing the Sports Promotional Schemes of SAI throughout in the country through its Regional Centres and Academic Institutes
+
+            The Executive Director (Finance) is the Financial Advisor of Sports Authority of India(SAI) who deals with maintenance of Accounts of Sports Authority of India (SAI), preparation of Budget, Internal audit and matters related to Financial Advice. Executive Director (Finance) is also the Member- Secretary of the Finance Committee of SAI. Finance Committee is a sub-committee of the Governing Body and the proposals having financial implications beyond the delegated powers of the Director General are placed before it for concurrence. The Finance Committee is headed by the Secretary (Sports), Ministry of Youth Affairs & Sports.
+            
+            Previous Page</p>
+    </div>
+
+    <div id="allocation" class="tab-content" style="display: block;">
+        <div class="accordion-container">
+            <button class="accordion" onclick="togglePanel('budget-2021-22')">
+                BUDGET 2021-22 <span class="toggle-icon">+</span>
+            </button>
+            <div id="budget-2021-22" class="panel">
+                <img src="budget1.img.webp" alt="Budget 2021-22" style="width: 100%; max-width: 500px;">
+            </div>
+    
+            <button class="accordion" onclick="togglePanel('budget-2022-23')">
+                BUDGET 2022-23 <span class="toggle-icon">+</span>
+            </button>
+            <div id="budget-2022-23" class="panel">
+                <img src="budget2.img.webp" alt="Budget 2020-21" style="width: 100%; max-width: 500px;">
+            </div>
+        </div>
+    </div>
+
+    <script>  
+        document.addEventListener("DOMContentLoaded", function () {
+          initializePage();
+      });
+      
+      function initializePage() {
+          // Hide all tab contents
+          document.querySelectorAll('.tab-content').forEach(tab => {
+              tab.style.display = 'none';
+          });
+      
+          // Show only the default tab (Brief)
+          document.getElementById('brief').style.display = 'block';
+      
+          // Remove active class from all buttons
+          document.querySelectorAll('.tab-btn').forEach(btn => {
+              btn.classList.remove('active');
+          });
+      
+          // Add active class to the "Brief" button
+          document.querySelector('.tab-btn[data-tab="brief"]').classList.add('active');
+      
+          // Hide all budget details initially
+          document.querySelectorAll('.budget-details').forEach(panel => {
+              panel.style.display = 'none';
+          });
+      }
+      
+      function showContent(tabId) {
+      // Hide all tab contents
+      document.querySelectorAll('.tab-content').forEach(tab => {
+          tab.style.display = 'none';
+      });
+  
+      // Show selected tab content
+      document.getElementById(tabId).style.display = 'block';
+  
+      // Remove active class from all buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.classList.remove('active');
+      });
+  
+      // Add active class to clicked button
+      document.querySelector(`.tab-btn[data-tab="${tabId}"]`).classList.add('active');
+  }
+  
+      
+      function toggleBudgetDetails(budgetId) {
+      let budgetPanel = document.getElementById(budgetId);
+  
+      if (budgetPanel) {
+          budgetPanel.style.display = (budgetPanel.style.display === 'block') ? 'none' : 'block';
+      } else {
+          console.error("Element not found:", budgetId);
+      }
+  } function togglePanel(panelId) {
+          let panel = document.getElementById(panelId);
+          let icon = panel.previousElementSibling.querySelector('.toggle-icon');
+  
+          if (panel.style.display === 'block') {
+              panel.style.display = 'none';
+              icon.textContent = '+';
+          } else {
+              panel.style.display = 'block';
+              icon.textContent = '-';
+          }
+      }
+      </script>
+    
+  
+   <div class="government-logos">
+      
+    <a href="https://www.olympics.com/ioc" target="_blank">
+        <img src="olympic.png" alt="Olympics Logo" class="gov-logo">
+    </a>
+
+    
+    <a href="https://kheloindia.gov.in" target="_blank">
+        <img src="khelo india.png" alt="Khelo India Logo" class="gov-logo">
+    </a>
+
+    
+    <a href="https://www.wada-ama.org/en" target="_blank">
+        <img src="wada.png" alt="WADA Logo" class="gov-logo">
+    </a>
+
+    
+    <a href="https://yas.nic.in/" target="_blank">
+        <img src="yas.png" alt="YAS Logo" class="gov-logo">
+    </a>
+</div>
+
+<div class="sai-info">
+
+<img src="sai-logo.svg" alt="SAI Logo" class="sai-logo">
+<p>
+    The Sports Authority of India (SAI), a successor organization of the IXth Asian Games held in New Delhi in 1982, was set up as a Society 
+    registered under the Societies Act, 1860 in pursuance of the Resolution No. 1-1/83/SAI dated 25th January 1984 of the Department of Sports, 
+    Govt. of India with the objective of promotion of Sports and Games as detailed in the Resolution.
+</p>
+
+
+<div class="app-links">
+    <a href="https://kheloindia.gov.in/assets/playstore_img.svg" target="_blank">
+        <img src="https://kheloindia.gov.in/assets/playstore_img.svg" alt="Play Store" class="app-logo">
+    </a>
+    <a href="https://kheloindia.gov.in/assets/appstore_img.svg" target="_blank">
+        <img src="https://kheloindia.gov.in/assets/appstore_img.svg" alt="App Store" class="app-logo">
+    </a>
+</div>
+</div>
+
+
+</body>
+
+</html> 
+
